@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<title>Glatz × 2040</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400;0,500;0,600;1,400;1,500&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;padding:0;height:100%;background:#FFFFFF;color:#0A0A0A;font-family:"Instrument Sans",system-ui,-apple-system,sans-serif;-webkit-font-smoothing:antialiased;overflow:hidden}
+a{color:inherit}
+a:hover{color:#EF55A0}
+del,ins{text-decoration:none}
+button:focus-visible,a:focus-visible{outline:1px solid currentColor;outline-offset:4px}
+::selection{background:#EF55A0;color:#FFFFFF}
+</style>
+</helmet>
+
+<main onClick="{{ onStage }}" style="position:fixed; inset:0; overflow:hidden; background:#FFFFFF; cursor:default;">
+
+<sc-if value="{{ on.thr }}" hint-placeholder-val="{{ true }}">
+<section data-scene="0" data-screen-label="01 Herr Lehner" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#0A0A0A; color:#FFFFFF; opacity:0; transition:opacity 1.2s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:36px;">
+    <p data-step="0" style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A; text-transform:none; font-size:clamp(14px,1.2vw,18px); letter-spacing:.02em; opacity:0; transition:opacity 1.2s cubic-bezier(.2,.7,.2,1);">Herr Lehner,</p>
+    <p data-step="0" style="margin:0; font-size:clamp(56px,min(10vw,17vh),176px); line-height:.98; font-weight:600; letter-spacing:-.035em; opacity:0; transform:translateY(12px); transition:opacity 1.6s cubic-bezier(.2,.7,.2,1) .6s, transform 1.6s cubic-bezier(.2,.7,.2,1) .6s;">Luegä, Losä, Laufä.</p>
+    <div data-step="1" style="display:flex; flex-direction:column; gap:12px; max-width:980px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-size:clamp(24px,2.8vw,44px); line-height:1.2; font-weight:500; letter-spacing:-.01em; text-wrap:pretty;">So, sagten Sie, arbeiten Sie sich ein. Schauen, hören, gehen.</p>
+      <a href="https://www.sicht-sonnenschutz.com/lehner-es-gilt-die-erfolgsgeschichte-von-glatz-weiterzuschreiben-289200/" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px; align-self:flex-start;">sicht &amp; sonnenschutz, interview, märz 2025</a>
+    </div>
+    <p data-step="2" style="margin:0; font-size:clamp(24px,2.8vw,44px); line-height:1.2; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:980px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Machen wir genau das. Nur vierzehn Sommer weiter vorne, im Juli <span style="color:#EF55A0;">2040</span>.</p>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.img1 }}">
+<section data-scene="1" data-screen-label="02 Bild" tabindex="-1" style="position:absolute; inset:0; overflow:hidden; background:#E4E4E4; opacity:0; transition:opacity 1.6s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div data-zoom="1" style="position:absolute; inset:0; transform-origin:38% 72%;">
+    <sc-if value="{{ imgOk }}"><img data-expose="0" src="glatz-2040.png" alt="Spekulatives Bild: Ein sehr grosser Schirm auf einem weiten, sonnigen Stadtplatz. Darunter ein junger Baum und ein kniendes Mädchen, das ihn giesst." onError="{{ onImgError }}" style="position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:36% 55%;"></sc-if>
+    <sc-if value="{{ imgFailed }}"><div style="position:absolute; inset:0; display:flex; align-items:center; justify-content:center; background:repeating-linear-gradient(135deg,#F4F4F4 0 14px,#E4E4E4 14px 15px);"><p style="margin:0; font-family:'JetBrains Mono',monospace; font-size:13px; color:#8A8A8A;">glatz-2040.png</p></div></sc-if>
+  </div>
+  <div style="position:absolute; top:clamp(28px,7vh,72px); right:clamp(24px,5vw,72px); max-width:min(42vw,620px); display:flex; flex-direction:column; gap:16px; align-items:flex-end; text-align:right;">
+    <p data-step="0" style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#0A0A0A; opacity:0; transition:opacity 1.2s cubic-bezier(.2,.7,.2,1) 1.2s;"><span style="color:#EF55A0;">&gt;</span>luegä · spekulatives bild, juli 2040</p>
+    <p data-step="1" style="margin:0; font-size:clamp(34px,min(4.6vw,8.5vh),80px); line-height:1.02; font-weight:600; letter-spacing:-.025em; color:#0A0A0A; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Wer spendet hier wem Schatten?</p>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.story }}">
+<section data-scene="2" data-screen-label="03 Antwort" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 72px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; color:#0A0A0A; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:28px;">
+    <p data-step="0" style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A; opacity:0; transition:opacity 1s ease;"><span style="color:#EF55A0;">&gt;</span>2040 · spekulativ</p>
+    <p data-step="0" style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Der Schirm dem Baum.</p>
+    <p data-step="1" style="margin:0; font-size:clamp(24px,2.8vw,44px); line-height:1.2; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:980px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Und der Baum, in zwanzig Sommern, dem ganzen Platz.</p>
+    <p data-step="2" style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; margin-top:40px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Gekauft hat diesen Schirm niemand.</p>
+    <p data-step="3" style="margin:0; font-size:clamp(24px,2.8vw,44px); line-height:1.2; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:980px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Die Stadt hat Schatten ausgeschrieben. Nach Stunden, nach Windklasse, mit Betrieb. Bis die Krone trägt.</p>
+    <p data-step="4" style="margin:12px 0 0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:clamp(14px,1.2vw,18px); opacity:0; transition:opacity 1.2s ease;">am mast: glatz, frauenfeld.</p>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.curtain }}">
+<section data-scene="3" data-screen-label="04 Vorhang" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow:hidden; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:36px;">
+    <p data-step="1" style="margin:0; font-size:clamp(48px,7.4vw,128px); line-height:1.02; font-weight:600; letter-spacing:-.03em; opacity:0; transition:opacity .6s cubic-bezier(.2,.7,.2,1) .6s;">Das ist <del style="position:relative; display:inline-block;">Fiktion<span data-strike="1" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .8s cubic-bezier(.6,0,.2,1) 1.4s;"></span></del> <ins data-step="1" style="opacity:0; transition:opacity .9s ease 2.3s;">Schweiz, 2026.</ins></p>
+    <p data-step="2" style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:clamp(14px,1.2vw,18px); opacity:0; transition:opacity 1s cubic-bezier(.2,.7,.2,1);"><span style="color:#EF55A0;">&gt;</span>losä. sechs signale. alle öffentlich. jedes mit quelle.</p>
+  </div>
+  <div data-curtain="1" style="position:absolute; inset:0; box-sizing:border-box; background:#0A0A0A; color:#FFFFFF; display:flex; flex-direction:column; justify-content:center; padding:96px clamp(24px,8vw,140px) 56px; transition:transform 1.5s cubic-bezier(.75,0,.2,1);">
+    <div style="max-width:1200px; width:100%; margin:0 auto;">
+      <p style="margin:0; font-size:clamp(48px,7.4vw,128px); line-height:1.02; font-weight:600; letter-spacing:-.03em;">Klingt nach Fiktion.</p>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.s1 }}">
+<section data-scene="4" data-screen-label="05 Signal Klima" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:32px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:18px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;"><span style="color:#EF55A0;">&gt;</span>signal 01 / 06 · klima</p>
+      <p style="margin:0; font-size:clamp(64px,min(15vw,21vh),232px); line-height:.9; font-weight:600; letter-spacing:-.045em;">17,2 °C</p>
+      <p style="margin:0; font-size:clamp(22px,2.4vw,38px); line-height:1.22; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:940px;">Der Sommer 2026 war der heisseste seit Messbeginn 1864. In einer um 3 °C wärmeren Welt wäre er ein durchschnittlicher Sommer.</p>
+    </div>
+    <p data-step="1" style="margin:12px 0 0; font-size:clamp(30px,min(4.6vw,8.5vh),80px); line-height:1.05; font-weight:600; letter-spacing:-.02em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Hitze ist <del style="position:relative; display:inline-block;">die Ausnahme<span data-strike="1" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .7s cubic-bezier(.6,0,.2,1) .7s;"></span></del> <ins data-step="1" style="opacity:0; transition:opacity .8s ease 1.4s;">der Normalfall.</ins></p>
+    <div data-step="2" style="display:flex; flex-direction:column; gap:14px; max-width:860px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.45; text-wrap:pretty;"><strong style="font-weight:600;">Für Glatz:</strong> Die Nachfrage nach Schatten hängt dann weniger am Wetter eines Sommers als an Entscheidungen, die für Jahrzehnte getroffen werden.</p>
+      <a href="https://www.meteoschweiz.admin.ch/service-und-publikationen/publikationen/berichte-und-bulletins/2026/klimabulletin-sommer-2026.html" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px; align-self:flex-start;">quelle: meteoschweiz, klimabulletin sommer 2026</a>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.s2 }}">
+<section data-scene="5" data-screen-label="06 Signal Arbeit" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:32px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:18px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;"><span style="color:#EF55A0;">&gt;</span>signal 02 / 06 · arbeit</p>
+      <p style="margin:0; font-size:clamp(64px,min(15vw,21vh),232px); line-height:.9; font-weight:600; letter-spacing:-.045em;">15 / 45</p>
+      <p style="margin:0; font-size:clamp(22px,2.4vw,38px); line-height:1.22; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:940px;">Genf, 25. Juni 2026: Arbeit in direkter Sonne ab 13 Uhr eingestellt. Wo sie unverzichtbar ist, gelten höchstens 15 Minuten Sonne, dann 45 Minuten Schatten.</p>
+    </div>
+    <p data-step="1" style="margin:12px 0 0; font-size:clamp(30px,min(4.6vw,8.5vh),80px); line-height:1.05; font-weight:600; letter-spacing:-.02em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Schatten ist <del style="position:relative; display:inline-block;">Komfort<span data-strike="1" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .7s cubic-bezier(.6,0,.2,1) .7s;"></span></del> <ins data-step="1" style="opacity:0; transition:opacity .8s ease 1.4s;">Arbeitsbedingung.</ins></p>
+    <div data-step="2" style="display:flex; flex-direction:column; gap:14px; max-width:860px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.45; text-wrap:pretty;">Im Kanton Zürich fordern Parteien von AL bis GLP: ab 33 Grad und ohne Beschattungsmöglichkeit ruht der Bau.</p>
+      <p style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.45; text-wrap:pretty;"><strong style="font-weight:600;">Für Glatz:</strong> Wo Schatten entscheidet, ob gearbeitet werden darf, wird er von der Anschaffung zur Betriebsfrage. Und der Käufer heisst Arbeitgeber.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:6px 20px;">
+        <a href="https://www.swissinfo.ch/ger/genfer-amt-ordnet-wegen-hitzewelle-arbeitsunterbruch-an/91647259" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px;">quelle: keystone-sda, 25.06.2026</a>
+        <a href="https://www.labournet.de/internationales/schweiz/arbeitsbedingungen-schweiz/die-gewerkschaften-unia-und-syna-sowie-der-baumeisterverband-der-schweiz-fordern-mehr-schutz-bei-hitze-auf-dem-bau/" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px;">work, 09.07.2026</a>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.s3 }}">
+<section data-scene="6" data-screen-label="07 Signal Stadt" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:32px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:18px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;"><span style="color:#EF55A0;">&gt;</span>signal 03 / 06 · stadt</p>
+      <p style="margin:0; font-size:clamp(64px,min(15vw,21vh),232px); line-height:.9; font-weight:600; letter-spacing:-.045em;">25 %</p>
+      <p style="margin:0; font-size:clamp(22px,2.4vw,38px); line-height:1.22; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:940px;">So viel von Zürich soll bis 2050 im Schatten von Bäumen liegen. 2022 waren es rund 15 %. Hitzeminderung ist «fest in den Arbeitsalltag der städtischen Planung integriert».</p>
+    </div>
+    <p data-step="1" style="margin:12px 0 0; font-size:clamp(30px,min(4.6vw,8.5vh),80px); line-height:1.05; font-weight:600; letter-spacing:-.02em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Schatten ist <del style="position:relative; display:inline-block;">Privatsache<span data-strike="1" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .7s cubic-bezier(.6,0,.2,1) .7s;"></span></del> <ins data-step="1" style="opacity:0; transition:opacity .8s ease 1.4s;">Stadtplanung.</ins></p>
+    <div data-step="2" style="display:flex; flex-direction:column; gap:14px; max-width:860px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.45; text-wrap:pretty;"><strong style="font-weight:600;">Für Glatz:</strong> Wer Schatten plant, hat ein Ziel, einen Zeitplan und mit dem Programm Stadtgrün Mittel bis 2035. Einen Schirm hat er bisher nicht gekauft.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:6px 20px;">
+        <a href="https://www.stadt-zuerich.ch/de/umwelt-und-energie/klima/klimaanpassung/hitze/massnahmen-hitzeminderung.html" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px;">quelle: stadt zürich, massnahmen zur hitzeminderung</a>
+        <a href="https://zuerich24.ch/articles/256729-stadt-zuerich-ergreift-40-massnahmen-gegen-hitzetage" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px;">sda, 24.06.2024</a>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.s4 }}">
+<section data-scene="7" data-screen-label="08 Signal Untergrund" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:32px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:18px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;"><span style="color:#EF55A0;">&gt;</span>signal 04 / 06 · untergrund</p>
+      <p style="margin:0; font-size:clamp(64px,min(15vw,21vh),232px); line-height:.9; font-weight:600; letter-spacing:-.045em;">24 Jahre</p>
+      <p style="margin:0; font-size:clamp(22px,2.4vw,38px); line-height:1.22; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:940px;">So lange dauert es bis zum Zürcher Baumziel. Und im Pilotgebiet Zürich-West liess sich die Mehrzahl der geeigneten Flächen gar nicht umgestalten: Werkleitungen, Sichtverhältnisse, zu schmale Fahrbahnen.</p>
+    </div>
+    <p data-step="1" style="margin:12px 0 0; font-size:clamp(30px,min(4.6vw,8.5vh),80px); line-height:1.05; font-weight:600; letter-spacing:-.02em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Der Baum löst das <del style="position:relative; display:inline-block;">sofort<span data-strike="1" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .7s cubic-bezier(.6,0,.2,1) .7s;"></span></del> <ins data-step="1" style="opacity:0; transition:opacity .8s ease 1.4s;">irgendwann.</ins></p>
+    <div data-step="2" style="display:flex; flex-direction:column; gap:14px; max-width:860px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.45; text-wrap:pretty;"><strong style="font-weight:600;">Für Glatz:</strong> Zwischen heute und der Krone liegen Jahre und Orte, die Schatten brauchen, der sofort da ist und keine Wurzeln hat.</p>
+      <a href="https://zuerich24.ch/articles/256729-stadt-zuerich-ergreift-40-massnahmen-gegen-hitzetage" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px; align-self:flex-start;">quelle: statusbericht fachplanung hitzeminderung 2020 bis 2023, via sda</a>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.s5 }}">
+<section data-scene="8" data-screen-label="09 Signal Katalog" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:32px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:18px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;"><span style="color:#EF55A0;">&gt;</span>signal 05 / 06 · planung</p>
+      <p style="margin:0; font-size:clamp(48px,min(9vw,14vh),150px); line-height:.95; font-weight:600; letter-spacing:-.04em; text-wrap:balance;">Baum. Dach. Pergola. Segel.</p>
+      <p style="margin:0; font-size:clamp(22px,2.4vw,38px); line-height:1.22; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:940px;">Der Kanton Zürich führt sie im selben Katalog: Schattige Flächen «können neben schattenspendenden Bäumen auch durch feste Überdachungen, Pergolen oder Sonnensegel erreicht werden».</p>
+    </div>
+    <p data-step="1" style="margin:12px 0 0; font-size:clamp(30px,min(4.6vw,8.5vh),80px); line-height:1.05; font-weight:600; letter-spacing:-.02em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Ein Schirm konkurriert mit <del style="position:relative; display:inline-block;">Schirmen<span data-strike="1" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .7s cubic-bezier(.6,0,.2,1) .7s;"></span></del> <ins data-step="1" style="opacity:0; transition:opacity .8s ease 1.4s;">jeder Form von Schatten.</ins></p>
+    <div data-step="2" style="display:flex; flex-direction:column; gap:14px; max-width:860px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.45; text-wrap:pretty;"><strong style="font-weight:600;">Für Glatz:</strong> Der Markt ist dann nicht mehr die Summe aller Schirme, sondern jeder Platz, der Schatten braucht. Er ist grösser. Und Glatz gehört er nicht automatisch.</p>
+      <a href="https://www.zh.ch/de/umwelt-tiere/klima/hitze-im-siedlungsraum/massnahmen-gegen-hitze.html" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px; align-self:flex-start;">quelle: kanton zürich, massnahmen gegen hitze</a>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.s6 }}">
+<section data-scene="9" data-screen-label="10 Signal Glatz" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:30px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:18px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;"><span style="color:#EF55A0;">&gt;</span>signal 06 / 06 · zürich, sechseläutenplatz</p>
+      <p style="margin:0; font-size:clamp(64px,min(15vw,21vh),232px); line-height:.9; font-weight:600; letter-spacing:-.045em;">CHF 40'000</p>
+      <p style="margin:0; font-size:clamp(22px,2.4vw,38px); line-height:1.22; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:940px;">Sommer 2017: So viel kosten die Sonnenschirme, die Zürich auf den Sechseläutenplatz stellt. Keine Woche später hat der Wind sie beschädigt. Sie werden abmontiert.</p>
+    </div>
+    <div data-step="1" style="display:grid; grid-template-columns:minmax(120px,200px) minmax(0,1fr); gap:14px 32px; align-items:baseline; max-width:1000px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Dezember 2017</p>
+      <p style="margin:0; font-size:clamp(20px,2vw,30px); line-height:1.3; font-weight:500;">Die Stadt schreibt aus: «Lieferung und Betrieb von Beschattungssystemen».</p>
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Juni 2018</p>
+      <p style="margin:0; font-size:clamp(20px,2vw,30px); line-height:1.3; font-weight:500;">Zwölf Glatz-Schirme. Von der Empa geprüft, bis 90 km/h, verankert in den Bodenhülsen für das Zelt des Zirkus Knie.</p>
+    </div>
+    <p data-step="2" style="margin:10px 0 0; font-size:clamp(30px,min(4.6vw,8.5vh),80px); line-height:1.05; font-weight:600; letter-spacing:-.02em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Im öffentlichen Raum entscheidet der <del style="position:relative; display:inline-block;">Preis<span data-strike="2" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .7s cubic-bezier(.6,0,.2,1) .7s;"></span></del> <ins data-step="2" style="opacity:0; transition:opacity .8s ease 1.4s;">Wind.</ins></p>
+    <div data-step="3" style="display:flex; flex-direction:column; gap:14px; max-width:860px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.45; text-wrap:pretty;"><strong style="font-weight:600;">Für Glatz:</strong> Die Ausschreibung, die 2040 normal sein könnte, gab es schon. Eine Stadt, kein Gastgeber. Betrieb, nicht nur Lieferung. Am Ende standen dort Glatz-Schirme.</p>
+      <div style="display:flex; flex-wrap:wrap; gap:6px 20px;">
+        <a href="https://www.tagesanzeiger.ch/windsichere-sonnenschirme-fuer-den-sechselaeutenplatz-657382869634" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px;">quelle: tages-anzeiger, 26.04.2018</a>
+        <a href="https://www.srf.ch/news/regional/zuerich-schaffhausen/neuer-schirm-versuch-auf-dem-zuercher-sechselaeutenplatz-stehen-wieder-12-sonnenschirme" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px;">srf, 28.06.2018</a>
+        <a href="https://www.nzz.ch/zuerich/sechselaeutenplatz-sonnenschirme-von-stadtraeten-eingeweiht-ld.1398993" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px;">nzz, 29.06.2018</a>
+      </div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.mean }}">
+<section data-scene="10" data-screen-label="11 Was sich ändert" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:28px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:16px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;"><span style="color:#EF55A0;">&gt;</span>was das bedeutet</p>
+      <p style="margin:0; font-size:clamp(30px,3.8vw,64px); line-height:1.06; font-weight:600; letter-spacing:-.02em; text-wrap:balance; max-width:1000px;">Wenn Schatten Infrastruktur wird, ändert sich mehr als die Nachfrage.</p>
+    </div>
+    <div style="display:flex; flex-direction:column;">
+      <div data-step="1" style="display:grid; grid-template-columns:minmax(110px,190px) minmax(0,1fr); gap:24px; padding:18px 0; border-top:1px solid #E4E4E4; align-items:baseline; opacity:0; transform:translateY(8px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);">
+        <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Wer kauft</p>
+        <p style="margin:0; font-size:clamp(22px,2.4vw,40px); line-height:1.2; font-weight:500; letter-spacing:-.01em;"><del style="position:relative; display:inline-block;">Der Gastgeber.<span data-strike="1" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .6s cubic-bezier(.6,0,.2,1) .5s;"></span></del> <ins data-step="1" style="opacity:0; transition:opacity .7s ease 1.1s;">Die Stadt, der Bauherr, der Arbeitgeber.</ins></p>
+      </div>
+      <div data-step="2" style="display:grid; grid-template-columns:minmax(110px,190px) minmax(0,1fr); gap:24px; padding:18px 0; border-top:1px solid #E4E4E4; align-items:baseline; opacity:0; transform:translateY(8px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);">
+        <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Verglichen mit</p>
+        <p style="margin:0; font-size:clamp(22px,2.4vw,40px); line-height:1.2; font-weight:500; letter-spacing:-.01em;"><del style="position:relative; display:inline-block;">Dem anderen Schirm.<span data-strike="2" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .6s cubic-bezier(.6,0,.2,1) .5s;"></span></del> <ins data-step="2" style="opacity:0; transition:opacity .7s ease 1.1s;">Dem Baum, der Pergola, dem Gebäude.</ins></p>
+      </div>
+      <div data-step="3" style="display:grid; grid-template-columns:minmax(110px,190px) minmax(0,1fr); gap:24px; padding:18px 0; border-top:1px solid #E4E4E4; align-items:baseline; opacity:0; transform:translateY(8px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);">
+        <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Beschafft als</p>
+        <p style="margin:0; font-size:clamp(22px,2.4vw,40px); line-height:1.2; font-weight:500; letter-spacing:-.01em;"><del style="position:relative; display:inline-block;">Produkt.<span data-strike="3" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .6s cubic-bezier(.6,0,.2,1) .5s;"></span></del> <ins data-step="3" style="opacity:0; transition:opacity .7s ease 1.1s;">Lieferung und Betrieb.</ins></p>
+      </div>
+      <div data-step="4" style="display:grid; grid-template-columns:minmax(110px,190px) minmax(0,1fr); gap:24px; padding:18px 0; border-top:1px solid #E4E4E4; align-items:baseline; opacity:0; transform:translateY(8px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);">
+        <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Gemessen in</p>
+        <p style="margin:0; font-size:clamp(22px,2.4vw,40px); line-height:1.2; font-weight:500; letter-spacing:-.01em;"><del style="position:relative; display:inline-block;">Quadratmetern.<span data-strike="4" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .6s cubic-bezier(.6,0,.2,1) .5s;"></span></del> <ins data-step="4" style="opacity:0; transition:opacity .7s ease 1.1s;">Stunden, in denen ein Ort nutzbar bleibt.</ins></p>
+      </div>
+      <div data-step="5" style="display:grid; grid-template-columns:minmax(110px,190px) minmax(0,1fr); gap:24px; padding:18px 0; border-top:1px solid #E4E4E4; border-bottom:1px solid #E4E4E4; align-items:baseline; opacity:0; transform:translateY(8px); transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1);">
+        <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Versagen heisst</p>
+        <p style="margin:0; font-size:clamp(22px,2.4vw,40px); line-height:1.2; font-weight:500; letter-spacing:-.01em;"><del style="position:relative; display:inline-block;">Ein kaputter Schirm.<span data-strike="5" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .6s cubic-bezier(.6,0,.2,1) .5s;"></span></del> <ins data-step="5" style="opacity:0; transition:opacity .7s ease 1.1s;">Ein Platz, der schliesst. Eine Baustelle, die ruht.</ins></p>
+      </div>
+    </div>
+    <p data-step="6" style="margin:16px 0 0; font-size:clamp(30px,3.8vw,64px); line-height:1.06; font-weight:600; letter-spacing:-.02em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Der Schirm ist nicht mehr die Kategorie. Er ist eine <em style="font-style:italic; font-weight:500;">mögliche</em> Antwort.</p>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.roots }}">
+<section data-scene="11" data-screen-label="12 Wurzeln" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:40px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:16px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">20 Minuten, 26.04.2018 · eine Passantin zu den geplanten neuen Schirmen</p>
+      <p style="margin:0; font-size:clamp(30px,3.8vw,64px); line-height:1.08; font-weight:500; letter-spacing:-.02em; color:#8A8A8A;">«…aber ich würde eher Bäume pflanzen.»</p>
+      <a href="https://20min.ch/schweiz/zuerich/story/Sonnenschirme-13905006" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px; align-self:flex-start;">quelle: 20 minuten</a>
+    </div>
+    <div data-step="1" style="position:relative; margin-top:24px; opacity:0; transition:opacity .4s ease;">
+      <p aria-hidden="true" style="margin:0; font-size:clamp(40px,5.6vw,96px); line-height:1.04; font-weight:600; letter-spacing:-.025em; text-wrap:balance; color:#E4E4E4;">Der grösste Wettbewerber eines Glatz-Schirms hat Wurzeln.</p>
+      <div data-shade="1" style="position:absolute; inset:0;">
+        <p style="margin:0; font-size:clamp(40px,5.6vw,96px); line-height:1.04; font-weight:600; letter-spacing:-.025em; text-wrap:balance; color:#0A0A0A;">Der grösste Wettbewerber eines Glatz-Schirms hat Wurzeln.</p>
+      </div>
+    </div>
+    <p data-step="2" style="margin:40px 0 0; font-size:clamp(30px,min(4.6vw,8.5vh),80px); line-height:1.05; font-weight:600; letter-spacing:-.02em; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Er ist <del style="position:relative; display:inline-block;">Konkurrent<span data-strike="2" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .7s cubic-bezier(.6,0,.2,1) .7s;"></span></del> <ins data-step="2" style="opacity:0; transition:opacity .8s ease 1.4s;">Partner.</ins></p>
+    <p data-step="3" style="margin:0; font-size:clamp(22px,2.4vw,38px); line-height:1.22; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:900px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Er braucht Jahrzehnte. Und er wächst nicht überall. Genau dazwischen liegt die Aufgabe.</p>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.time }}">
+<section data-scene="12" data-screen-label="13 Baum und Schirm" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:40px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:14px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.025em; text-wrap:balance;">Ein Baum wird mit jedem Jahr besser.</p>
+      <a href="https://www.zh.ch/de/umwelt-tiere/klima/hitze-im-siedlungsraum/massnahmen-gegen-hitze/baeume.html" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px; align-self:flex-start;">kanton zürich: «je älter und grösser ein baum, desto grösser auch seine vorteile.»</a>
+    </div>
+    <p data-step="1" style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.025em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Ein Schirm ist am ersten Tag da.</p>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.zeit }}">
+<section data-scene="13" data-screen-label="14 Zeit" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 56px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:48px;">
+    <div data-step="0" style="position:relative; opacity:0; transition:opacity .4s ease;">
+      <p aria-hidden="true" style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; color:#E4E4E4;">Vielleicht ist Schatten 2040 keine Fläche mehr. Sondern Zeit.</p>
+      <div data-shade="0" style="position:absolute; inset:0;">
+        <p style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; color:#0A0A0A;">Vielleicht ist Schatten 2040 keine Fläche mehr. Sondern <span style="color:#EF55A0;">Zeit.</span></p>
+      </div>
+    </div>
+    <p data-step="1" style="margin:40px 0 0; font-size:clamp(22px,2.4vw,38px); line-height:1.22; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:900px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Die Stunden, in denen ein Ort nutzbar bleibt. Und die Jahre, bis der Baum so weit ist.</p>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.portal }}">
+<section data-scene="14" data-screen-label="15 Drei Wege" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 72px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; color:#0A0A0A; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:36px;">
+    <p data-step="0" style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A; opacity:0; transition:opacity 1s ease;"><span style="color:#EF55A0;">&gt;</span>zurück auf den platz vom anfang</p>
+    <p data-step="0" style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Wie kommt dieser Platz 2040 zu seinem Schatten?</p>
+    <p data-step="1" style="margin:0; font-size:clamp(24px,2.8vw,44px); line-height:1.2; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:980px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Drei mögliche Wege. Jeder macht aus Glatz ein anderes Unternehmen.</p>
+    <div data-step="2" style="display:flex; flex-wrap:wrap; gap:16px 48px; margin-top:16px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-size:clamp(22px,2.2vw,36px); font-weight:600; letter-spacing:-.01em;"><span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:13px; color:#EF55A0; font-weight:400; margin-right:10px;">1</span>Mit Pflichtenheft.</p>
+      <p style="margin:0; font-size:clamp(22px,2.2vw,36px); font-weight:600; letter-spacing:-.01em;"><span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:13px; color:#EF55A0; font-weight:400; margin-right:10px;">2</span>Auf Zeit.</p>
+      <p style="margin:0; font-size:clamp(22px,2.2vw,36px); font-weight:600; letter-spacing:-.01em;"><span style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:13px; color:#EF55A0; font-weight:400; margin-right:10px;">3</span>Ohne Schirm.</p>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.w1 }}">
+<section data-scene="15" data-screen-label="16 Szenario 1" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 72px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; color:#0A0A0A; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:40px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:14px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;"><span style="color:#EF55A0;">&gt;</span>szenario 1 / 3 · 2040</p>
+      <p style="margin:0; font-size:clamp(56px,min(9.5vw,16vh),168px); line-height:.94; font-weight:600; letter-spacing:-.04em; text-wrap:balance;">Schatten mit Pflichtenheft.</p>
+      <p style="margin:6px 0 0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:clamp(14px,1.2vw,18px); line-height:1.55; max-width:860px; color:#0A0A0A;">wenn schatten zur pflicht wird, dann wird er beschafft wie strassenbeleuchtung: nach spezifikation, mit betrieb, über jahre.</p>
+    </div>
+    <p data-step="1" style="margin:0; font-size:clamp(26px,min(3.2vw,6vh),54px); line-height:1.14; font-weight:500; letter-spacing:-.015em; text-wrap:pretty; max-width:1040px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Juli 2040. Eine Baustelle arbeitet durch den Hitzesommer. Im Leistungsverzeichnis steht nicht «Schirm», sondern: Schatten, Windklasse, Betrieb über zehn Jahre.</p>
+    <dl data-step="2" style="margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:24px 40px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Es entscheiden</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">Tiefbauämter, Bauherren, Arbeitgeber, Schulbehörden.</dd></div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Verglichen mit</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">Zelten, Containern, Mietparks, festen Dächern.</dd></div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Glatz gewinnt, wenn</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">sein Wissen über Wind zur Norm wird.</dd></div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Glatz verliert, wenn</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">nach Norm gekauft wird, nicht nach Marke.</dd></div>
+    </dl>
+  </div>
+  <div data-rise="3" style="position:fixed; inset:0; box-sizing:border-box; background:#0A0A0A; color:#FFFFFF; display:flex; flex-direction:column; justify-content:center; padding:96px clamp(24px,8vw,140px) 72px; transform:translateY(100%); transition:transform 1.3s cubic-bezier(.75,0,.2,1);">
+    <div style="max-width:1200px; width:100%; margin:0 auto; display:flex; flex-direction:column; gap:32px;">
+      <p data-step="3" style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A; opacity:0; transition:opacity 1s ease 1s;">Die Frage, die sich Glatz <span style="color:#EF55A0;">heute</span> schon stellen muss</p>
+      <p data-step="3" style="margin:0; font-size:clamp(40px,min(6vw,10.5vh),104px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1.2s cubic-bezier(.2,.7,.2,1) 1.2s, transform 1.2s cubic-bezier(.2,.7,.2,1) 1.2s;">Was garantieren wir, wenn der Wind kommt? Und wer betreibt den Schatten, wenn wir es nicht tun?</p>
+      <p data-step="3" style="margin:12px 0 0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:13px; line-height:1.6; color:#8A8A8A; max-width:760px; opacity:0; transition:opacity 1s ease 2.2s;"><span style="color:#EF55A0;">&gt;</span>woran man merkt, dass diese welt kommt: ein kanton knüpft arbeit bei hitze verbindlich an dauerhafte beschattung.</p>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.w2 }}">
+<section data-scene="16" data-screen-label="17 Szenario 2" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 72px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; color:#0A0A0A; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:40px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:14px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;"><span style="color:#EF55A0;">&gt;</span>szenario 2 / 3 · 2040</p>
+      <p style="margin:0; font-size:clamp(56px,min(9.5vw,16vh),168px); line-height:.94; font-weight:600; letter-spacing:-.04em; text-wrap:balance;">Schatten auf Zeit.</p>
+      <p style="margin:6px 0 0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:clamp(14px,1.2vw,18px); line-height:1.55; max-width:860px; color:#0A0A0A;">wenn die städte auf den baum setzen, dann wird technischer schatten zur brücke bis zur krone und zur antwort dort, wo nichts wachsen kann.</p>
+    </div>
+    <p data-step="1" style="margin:0; font-size:clamp(26px,min(3.2vw,6vh),54px); line-height:1.14; font-weight:500; letter-spacing:-.015em; text-wrap:pretty; max-width:1040px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Herbst 2040. Der Schirm auf dem Schulhausplatz zieht weiter. Die Linde, die er zwölf Sommer lang beschattet hat, schafft es jetzt allein.</p>
+    <dl data-step="2" style="margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:24px 40px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Es entscheiden</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">Grünflächenämter, Landschaftsarchitekturbüros, Stadtklima-Fachstellen.</dd></div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Verglichen mit</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">dem Baum selbst, begrünten Pergolen, Sonnensegeln.</dd></div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Glatz gewinnt, wenn</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">«temporär» nach Planung klingt, nicht nach Notlösung.</dd></div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Glatz verliert, wenn</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">die Budgets ganz ins Grün fliessen.</dd></div>
+    </dl>
+  </div>
+  <div data-rise="3" style="position:fixed; inset:0; box-sizing:border-box; background:#0A0A0A; color:#FFFFFF; display:flex; flex-direction:column; justify-content:center; padding:96px clamp(24px,8vw,140px) 72px; transform:translateY(100%); transition:transform 1.3s cubic-bezier(.75,0,.2,1);">
+    <div style="max-width:1200px; width:100%; margin:0 auto; display:flex; flex-direction:column; gap:32px;">
+      <p data-step="3" style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A; opacity:0; transition:opacity 1s ease 1s;">Die Frage, die sich Glatz <span style="color:#EF55A0;">heute</span> schon stellen muss</p>
+      <p data-step="3" style="margin:0; font-size:clamp(40px,min(6vw,10.5vh),104px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1.2s cubic-bezier(.2,.7,.2,1) 1.2s, transform 1.2s cubic-bezier(.2,.7,.2,1) 1.2s;">Wie baut man Schatten, der weiterzieht, sobald der Baum ihn nicht mehr braucht?</p>
+      <p data-step="3" style="margin:12px 0 0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:13px; line-height:1.6; color:#8A8A8A; max-width:760px; opacity:0; transition:opacity 1s ease 2.2s;"><span style="color:#EF55A0;">&gt;</span>woran man merkt, dass diese welt kommt: eine ausschreibung verbindet baumpflanzung und zwischenbeschattung in einem los.</p>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.w3 }}">
+<section data-scene="17" data-screen-label="18 Szenario 3" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 72px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; color:#0A0A0A; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:40px;">
+    <div data-step="0" style="display:flex; flex-direction:column; gap:14px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;"><span style="color:#EF55A0;">&gt;</span>szenario 3 / 3 · 2040</p>
+      <p style="margin:0; font-size:clamp(56px,min(9.5vw,16vh),168px); line-height:.94; font-weight:600; letter-spacing:-.04em; text-wrap:balance;">Schatten ohne Schirm.</p>
+      <p style="margin:6px 0 0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:clamp(14px,1.2vw,18px); line-height:1.55; max-width:860px; color:#0A0A0A;">wenn hitzeminderung früh in gestaltungsplänen festgelegt wird, dann entsteht schatten mit dem gebäude: als arkade, dach, fassade, membran.</p>
+    </div>
+    <p data-step="1" style="margin:0; font-size:clamp(26px,min(3.2vw,6vh),54px); line-height:1.14; font-weight:500; letter-spacing:-.015em; text-wrap:pretty; max-width:1040px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">2040. Der neue Platz hat keinen einzigen Schirm. Der Schatten kommt aus Arkade, Membran und Dach. Wer die Membran genäht hat, steht in keinem Prospekt.</p>
+    <dl data-step="2" style="margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,240px),1fr)); gap:24px 40px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Es entscheiden</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">Architektinnen, Entwickler, Generalunternehmer. Jahre vor der Eröffnung.</dd></div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Verglichen mit</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">Fassaden- und Membranbau, Pergola-Systemen, dem Gebäude selbst.</dd></div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Glatz gewinnt, wenn</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">Näherei, Mechanik und Objekterfahrung mitgeplant werden.</dd></div>
+      <div style="display:flex; flex-direction:column; gap:8px; border-top:2px solid #0A0A0A; padding-top:14px;"><dt style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A;">Glatz verliert, wenn</dt><dd style="margin:0; font-size:clamp(18px,1.5vw,24px); line-height:1.35; font-weight:500;">aus einer Marke eine Position im Leistungsverzeichnis wird.</dd></div>
+    </dl>
+  </div>
+  <div data-rise="3" style="position:fixed; inset:0; box-sizing:border-box; background:#0A0A0A; color:#FFFFFF; display:flex; flex-direction:column; justify-content:center; padding:96px clamp(24px,8vw,140px) 72px; transform:translateY(100%); transition:transform 1.3s cubic-bezier(.75,0,.2,1);">
+    <div style="max-width:1200px; width:100%; margin:0 auto; display:flex; flex-direction:column; gap:32px;">
+      <p data-step="3" style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; letter-spacing:.08em; text-transform:uppercase; color:#8A8A8A; opacity:0; transition:opacity 1s ease 1s;">Die Frage, die sich Glatz <span style="color:#EF55A0;">heute</span> schon stellen muss</p>
+      <p data-step="3" style="margin:0; font-size:clamp(40px,min(6vw,10.5vh),104px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1.2s cubic-bezier(.2,.7,.2,1) 1.2s, transform 1.2s cubic-bezier(.2,.7,.2,1) 1.2s;">Was bleibt von Glatz, wenn niemand mehr «Schirm» ins Pflichtenheft schreibt?</p>
+      <p data-step="3" style="margin:12px 0 0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:13px; line-height:1.6; color:#8A8A8A; max-width:760px; opacity:0; transition:opacity 1s ease 2.2s;"><span style="color:#EF55A0;">&gt;</span>woran man merkt, dass diese welt kommt: gemeinden machen hitzeminderung in gestaltungsplänen verbindlich.</p>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.common }}">
+<section data-scene="18" data-screen-label="19 Gemeinsamkeit" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 72px; overflow-x:hidden; overflow-y:auto; background:#0A0A0A; color:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:40px;">
+    <p data-step="0" style="margin:0; font-size:clamp(24px,2.8vw,44px); line-height:1.2; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:980px; color:#8A8A8A; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Drei Welten. Sie widersprechen sich fast überall. Ausser in einem Punkt.</p>
+    <p data-step="1" style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">In keiner kauft jemand <del style="position:relative; display:inline-block;">einen Schirm.<span data-strike="1" aria-hidden="true" style="position:absolute; left:-.03em; right:-.03em; top:52%; height:.09em; background:#EF55A0; transform:scaleX(0); transform-origin:left center; transition:transform .7s cubic-bezier(.6,0,.2,1) .7s;"></span></del> <ins data-step="1" style="opacity:0; transition:opacity .8s ease 1.4s;">einen Ort, der funktioniert.</ins></p>
+    <p data-step="2" style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Und in allen dreien fällt die Entscheidung, bevor jemand in Frauenfeld anruft.</p>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.gen2 }}">
+<section data-scene="19" data-screen-label="20 Um wen es geht" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 72px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; color:#0A0A0A; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:36px;">
+    <p data-step="0" style="margin:0; font-size:clamp(24px,2.8vw,44px); line-height:1.2; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:980px; color:#8A8A8A; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Denken Sie noch einmal an das Bild vom Anfang. Diesmal nicht an den Schirm.</p>
+    <p data-step="1" style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">An das Mädchen.</p>
+    <div data-step="2" style="display:flex; flex-direction:column; gap:12px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">
+      <p style="margin:0; font-size:clamp(24px,2.8vw,44px); line-height:1.2; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:980px;">Zürich will Hitze zuerst dort mindern, wo die Jüngsten und die Ältesten sind: bei Schulen, Pflege- und Alterszentren.</p>
+      <a href="https://www.stadt-zuerich.ch/de/umwelt-und-energie/klima/klimaanpassung/hitze/fachplanung-hitzeminderung.html" target="_blank" rel="noopener noreferrer" style="font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px; align-self:flex-start;">quelle: stadt zürich, fachplanung hitzeminderung</a>
+    </div>
+    <p data-step="3" style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; font-size:clamp(34px,min(4.6vw,8.5vh),80px); margin-top:12px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Um sie geht es bei der Entscheidung, die vor dem Anruf in Frauenfeld fällt. Nicht um den Schirm.</p>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.quote }}">
+<section data-scene="20" data-screen-label="21 Ihr Satz" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 72px; overflow-x:hidden; overflow-y:auto; background:#FFFFFF; color:#0A0A0A; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none;">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:32px;">
+    <p data-step="0" style="margin:0; font-size:clamp(24px,2.8vw,44px); line-height:1.2; font-weight:500; letter-spacing:-.01em; text-wrap:pretty; max-width:980px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Sie haben diesen Ort übrigens schon beschrieben.</p>
+    <div data-step="1" style="position:relative; margin-top:44px; opacity:0; transition:opacity .4s ease;">
+      <p aria-hidden="true" style="margin:0; font-size:clamp(36px,min(5vw,8.5vh),88px); line-height:1.04; font-weight:600; letter-spacing:-.025em; text-wrap:balance; color:#E4E4E4;">«Wir kreieren Orte, wo sich Menschen draussen wohl und geschützt fühlen.»</p>
+      <div data-shade="1" style="position:absolute; inset:0;">
+        <p style="margin:0; font-size:clamp(36px,min(5vw,8.5vh),88px); line-height:1.04; font-weight:600; letter-spacing:-.025em; text-wrap:balance; color:#0A0A0A;">«Wir kreieren <span data-hl="2" style="transition:color .8s ease;">Orte</span>, wo sich <span data-hl="4" style="transition:color .8s ease;">Menschen</span> <span data-hl="3" style="transition:color .8s ease;">draussen</span> wohl und <span data-hl="5" style="transition:color .8s ease;">geschützt</span> fühlen.»</p>
+      </div>
+    </div>
+    <a data-step="1" href="https://www.s-ge.com/de/article/mitglied-des-monats/202603-c1-mitglied-des-monats-maerz-2026-glatz-ag" target="_blank" rel="noopener noreferrer" style="margin-top:36px; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; text-underline-offset:3px; align-self:flex-start; opacity:0; transition:opacity 1s ease 2.6s;">urs lehner · switzerland global enterprise, märz 2026</a>
+    <dl style="margin:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,220px),1fr)); gap:20px 36px;">
+      <div data-step="2" style="display:flex; flex-direction:column; gap:6px; border-top:2px solid #0A0A0A; padding-top:12px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);"><dt style="font-size:clamp(20px,1.8vw,28px); font-weight:600; color:#EF55A0;">Orte</dt><dd style="margin:0; font-size:clamp(16px,1.3vw,20px); line-height:1.4;">Nicht Produkte. Das, was Städte heute planen.</dd></div>
+      <div data-step="3" style="display:flex; flex-direction:column; gap:6px; border-top:2px solid #0A0A0A; padding-top:12px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);"><dt style="font-size:clamp(20px,1.8vw,28px); font-weight:600; color:#EF55A0;">draussen</dt><dd style="margin:0; font-size:clamp(16px,1.3vw,20px); line-height:1.4;">Der Raum, den Zürich bis 2050 zu 25 % unter Baumkronen bringen will.</dd></div>
+      <div data-step="4" style="display:flex; flex-direction:column; gap:6px; border-top:2px solid #0A0A0A; padding-top:12px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);"><dt style="font-size:clamp(20px,1.8vw,28px); font-weight:600; color:#EF55A0;">Menschen</dt><dd style="margin:0; font-size:clamp(16px,1.3vw,20px); line-height:1.4;">Die Jüngsten und die Ältesten. Zuerst.</dd></div>
+      <div data-step="5" style="display:flex; flex-direction:column; gap:6px; border-top:2px solid #0A0A0A; padding-top:12px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);"><dt style="font-size:clamp(20px,1.8vw,28px); font-weight:600; color:#EF55A0;">geschützt</dt><dd style="margin:0; font-size:clamp(16px,1.3vw,20px); line-height:1.4;">Vor Hitze. Und vor dem Wind, der 2017 Schirme für CHF 40'000 abräumte.</dd></div>
+    </dl>
+    <p data-step="6" style="margin:0; font-size:clamp(44px,min(6.4vw,11vh),112px); line-height:1.02; font-weight:600; letter-spacing:-.03em; text-wrap:balance; font-size:clamp(34px,min(4.6vw,8.5vh),80px); margin-top:12px; opacity:0; transform:translateY(12px); transition:opacity 1s cubic-bezier(.2,.7,.2,1), transform 1s cubic-bezier(.2,.7,.2,1);">Das ist kein Markenversprechen. Das ist das Pflichtenheft von 2040.</p>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ on.end }}">
+<section data-scene="21" data-screen-label="22 Laufä" tabindex="-1" style="position:absolute; inset:0; box-sizing:border-box; display:flex; flex-direction:column; justify-content:flex-start; padding:96px clamp(24px,8vw,140px) 72px; overflow-x:hidden; overflow-y:auto; background:#0A0A0A; color:#FFFFFF; opacity:0; transition:opacity .9s cubic-bezier(.2,.7,.2,1); outline:none; transition:opacity 1.4s cubic-bezier(.2,.7,.2,1);">
+  <div style="max-width:1200px; width:100%; margin:auto; display:flex; flex-direction:column; gap:36px;">
+    <p data-step="0" style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:clamp(14px,1.2vw,18px); color:#8A8A8A; opacity:0; transition:opacity 1.2s ease;">Herr Lehner,</p>
+    <p data-step="0" style="margin:0; font-size:clamp(56px,min(10vw,17vh),176px); line-height:.98; font-weight:600; letter-spacing:-.035em; opacity:0; transform:translateY(12px); transition:opacity 1.6s cubic-bezier(.2,.7,.2,1) .5s, transform 1.6s cubic-bezier(.2,.7,.2,1) .5s;"><span style="color:#8A8A8A;">Luegä. Losä.</span> <span data-step="1" style="color:#EF55A0; opacity:0; transition:opacity 1.4s ease .2s;">Laufä.</span></p>
+    <p data-step="2" style="margin:24px 0 0; font-size:clamp(34px,min(4.8vw,8.5vh),84px); line-height:1.04; font-weight:600; letter-spacing:-.025em; text-wrap:balance; max-width:1100px; opacity:0; transform:translateY(12px); transition:opacity 1.8s cubic-bezier(.2,.7,.2,1), transform 1.8s cubic-bezier(.2,.7,.2,1);">Wenn Ihr Satz 2040 zum Pflichtenheft wird: Wer schreibt es, wenn nicht Glatz?</p>
+    <p data-step="2" style="margin:0; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:#8A8A8A; opacity:0; transition:opacity 1.4s ease 2.4s;">drei szenarien. keine prognose.</p>
+  </div>
+</section>
+</sc-if>
+
+</main>
+
+<div aria-hidden="true" style="position:fixed; right:clamp(20px,3vw,44px); bottom:clamp(16px,3.5vh,36px); display:flex; gap:12px; align-items:center; font-family:'JetBrains Mono',ui-monospace,monospace; font-size:12px; color:{{ cueFg }}; pointer-events:none;">
+  <span data-cue="1" style="display:flex; gap:12px; align-items:center; opacity:0; transition:opacity 1s ease;"><span>{{ cueText }}</span><span data-blink="1" style="color:#EF55A0; font-size:22px; font-weight:700; line-height:1;">&gt;</span></span>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;showTags&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Darstellung&quot;},&quot;resume&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:false,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Verhalten&quot;}}">
+class Component extends DCLogic {
+  static SC = [
+    { id: 'thr', steps: 3, ch: '2040', tag: '', dark: true },
+    { id: 'img1', steps: 2, ch: '2040', tag: 'spekulatives bild', img: true },
+    { id: 'story', steps: 5, ch: '2040', tag: 'spekulativ' },
+    { id: 'curtain', steps: 3, ch: 'signale', tag: '', darkAt0: true },
+    { id: 's1', steps: 3, ch: 'signale', tag: 'signal · belegt' },
+    { id: 's2', steps: 3, ch: 'signale', tag: 'signal · belegt' },
+    { id: 's3', steps: 3, ch: 'signale', tag: 'signal · belegt' },
+    { id: 's4', steps: 3, ch: 'signale', tag: 'signal · belegt' },
+    { id: 's5', steps: 3, ch: 'signale', tag: 'signal · belegt' },
+    { id: 's6', steps: 4, ch: 'signale', tag: 'fakt · glatz' },
+    { id: 'mean', steps: 7, ch: 'bedeutung', tag: 'interpretation' },
+    { id: 'roots', steps: 4, ch: 'bedeutung', tag: 'fakt · hypothese' },
+    { id: 'time', steps: 2, ch: 'bedeutung', tag: 'fakt' },
+    { id: 'zeit', steps: 2, ch: 'bedeutung', tag: 'hypothese' },
+    { id: 'portal', steps: 3, ch: 'szenarien', tag: '' },
+    { id: 'w1', steps: 4, ch: 'szenarien', tag: 'szenario', darkFrom: 3 },
+    { id: 'w2', steps: 4, ch: 'szenarien', tag: 'szenario', darkFrom: 3 },
+    { id: 'w3', steps: 4, ch: 'szenarien', tag: 'szenario', darkFrom: 3 },
+    { id: 'common', steps: 3, ch: 'szenarien', tag: '', dark: true },
+    { id: 'gen2', steps: 4, ch: '2040', tag: 'fakt · hypothese' },
+    { id: 'quote', steps: 7, ch: 'ihr satz', tag: 'zitat' },
+    { id: 'end', steps: 3, ch: 'glatz', tag: '', dark: true }
+  ];
+
+  state = { i: 0, st: 0, choice: null, drawer: false, imgFailed: false, nudge: false };
+
+  componentDidMount() {
+    const SC = Component.SC;
+    this.reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (this.props.resume ?? false) {
+      try {
+        const s = JSON.parse(localStorage.getItem('glatz2040v2.pos') || 'null');
+        if (s && s.i >= 0 && s.i < SC.length) this.setState({ i: s.i, st: Math.min(s.st || 0, SC[s.i].steps - 1), choice: s.choice || null });
+      } catch (e) {}
+    }
+    this.onKey = (e) => {
+      if (e.metaKey || e.ctrlKey || e.altKey) return;
+      if (this.state.drawer) { if (e.key === 'Escape') this.setState({ drawer: false }); return; }
+      const t = e.target;
+      const onBtn = t && t.closest && t.closest('button,a');
+      if (['ArrowRight', 'ArrowDown', 'PageDown'].includes(e.key) || (e.key === ' ' && !onBtn) || (e.key === 'Enter' && !onBtn)) { e.preventDefault(); this.next(); }
+      else if (['ArrowLeft', 'ArrowUp', 'PageUp'].includes(e.key)) { e.preventDefault(); this.prev(); }
+      else if (e.key === 'Home') { e.preventDefault(); this.go(0, 0); }
+      else if (SC[this.state.i].id === 'fork' && (e.key === 'a' || e.key === 'A')) this.pick('a');
+      else if (SC[this.state.i].id === 'fork' && (e.key === 'b' || e.key === 'B')) this.pick('b');
+    };
+    window.addEventListener('keydown', this.onKey);
+    this.onResize = () => { try { this.apply(true); } catch (e) {} };
+    window.addEventListener('resize', this.onResize);
+    this._last = { i: 0, st: 0, choice: null, imgFailed: false };
+    try { this.apply(); } catch (e) { console.warn('apply', e); }
+    const b = document.querySelector('[data-blink]');
+    if (b && b.animate && !this.reduce) b.animate([{ opacity: 1, transform: 'translateX(0)' }, { opacity: .35, transform: 'translateX(4px)' }, { opacity: 1, transform: 'translateX(0)' }], { duration: 1800, iterations: Infinity, easing: 'ease-in-out' });
+  }
+  componentWillUnmount() {
+    window.removeEventListener('keydown', this.onKey);
+    window.removeEventListener('resize', this.onResize);
+  }
+  componentDidUpdate() {
+    const s = this.state; const L = this._last || {};
+    if (L.i !== s.i || L.st !== s.st || L.choice !== s.choice || L.imgFailed !== s.imgFailed) {
+      const changed = L.i !== s.i;
+      this._last = { i: s.i, st: s.st, choice: s.choice, imgFailed: s.imgFailed };
+      try { this.apply(false, changed); } catch (e) { console.warn('apply', e); }
+    }
+  }
+
+  save(i, st, choice) { try { localStorage.setItem('glatz2040v2.pos', JSON.stringify({ i, st, choice })); } catch (e) {} }
+  go(i, st) { this.setState({ i, st, nudge: false }); this.save(i, st, this.state.choice); }
+  next = () => {
+    const SC = Component.SC; const { i, st, choice } = this.state; const s = SC[i];
+    if (s.id === 'fork' && !choice) { this.setState({ nudge: true }); return; }
+    if (st < s.steps - 1) this.go(i, st + 1);
+    else if (i < SC.length - 1) this.go(i + 1, 0);
+  };
+  prev = () => {
+    const SC = Component.SC; const { i, st } = this.state;
+    if (st > 0) this.go(i, st - 1);
+    else if (i > 0) this.go(i - 1, SC[i - 1].steps - 1);
+  };
+  pick(c) { this.setState({ choice: c, nudge: false }); this.save(this.state.i, this.state.st, c); }
+
+  apply(instant, sceneChanged, tries = 0) {
+    const { i, st } = this.state;
+    const root = document.querySelector('[data-scene="' + i + '"]');
+    if (!root) { if (tries < 30) requestAnimationFrame(() => this.apply(instant, sceneChanged, tries + 1)); return; }
+    const R = this.reduce || instant;
+    const run = () => {
+      if (this.reduce) root.style.transition = 'none';
+      root.style.opacity = '1';
+      if (sceneChanged) { root.scrollTop = 0; try { root.focus({ preventScroll: true }); } catch (e) {} }
+      const kill = (el) => { if (R) el.style.transition = 'none'; };
+      root.querySelectorAll('[data-step]').forEach((el) => {
+        const k = +el.dataset.step;
+        const u = el.dataset.until != null ? +el.dataset.until : Infinity;
+        const vis = st >= k && st < u;
+        if (this.reduce) el.style.transition = 'none';
+        el.style.opacity = vis ? '1' : '0';
+        if (el.tagName !== 'INS') el.style.transform = vis ? 'none' : 'translateY(12px)';
+        el.style.pointerEvents = vis ? '' : 'none';
+        if (vis) el.removeAttribute('aria-hidden'); else el.setAttribute('aria-hidden', 'true');
+      });
+      root.querySelectorAll('[data-strike]').forEach((el) => { kill(el); el.style.transform = st >= +el.dataset.strike ? 'scaleX(1)' : 'scaleX(0)'; });
+      root.querySelectorAll('[data-curtain]').forEach((el) => { kill(el); el.style.transform = st >= +el.dataset.curtain ? 'translateY(-100%)' : 'none'; });
+      root.querySelectorAll('[data-expose]').forEach((el) => {
+        const vis = st >= +el.dataset.expose;
+        el.style.filter = 'none';
+      });
+      root.querySelectorAll('[data-hl]').forEach((el) => { kill(el); el.style.color = st >= +el.dataset.hl ? '#EF55A0' : ''; });
+      root.querySelectorAll('[data-rise]').forEach((el) => { kill(el); el.style.transform = st >= +el.dataset.rise ? 'none' : 'translateY(100%)'; });
+      root.querySelectorAll('[data-fade]').forEach((el) => { kill(el); el.style.opacity = st >= +el.dataset.fade ? '1' : '0'; });
+      root.querySelectorAll('[data-zoom]').forEach((el) => {
+        el.style.transition = R ? 'none' : 'transform 14s cubic-bezier(.2,.6,.2,1)';
+        el.style.transform = st >= +el.dataset.zoom ? 'scale(1.1)' : 'scale(1)';
+      });
+      root.querySelectorAll('[data-shade]').forEach((el) => {
+        const vis = st >= +el.dataset.shade;
+        const set = (v) => { el.style.webkitMaskPosition = v; el.style.maskPosition = v; };
+        if (!el.dataset.init) {
+          const g = 'linear-gradient(90deg,#000 0%,#000 40%,transparent 60%,transparent 100%)';
+          el.style.webkitMaskImage = g; el.style.maskImage = g;
+          el.style.webkitMaskSize = '250% 100%'; el.style.maskSize = '250% 100%';
+          el.style.webkitMaskRepeat = 'no-repeat'; el.style.maskRepeat = 'no-repeat';
+          el.style.transition = 'none'; set('100% 0'); void el.offsetWidth; el.dataset.init = '1';
+        }
+        if (R) { el.style.transition = 'none'; set(vis ? '0% 0' : '100% 0'); }
+        else { el.style.transition = 'mask-position 3.2s cubic-bezier(.4,0,.2,1) .3s, -webkit-mask-position 3.2s cubic-bezier(.4,0,.2,1) .3s'; set(vis ? '0% 0' : '100% 0'); }
+      });
+      setTimeout(() => this.reveal(root, R), R ? 0 : 60);
+      const cue = document.querySelector('[data-cue]');
+      if (cue) {
+        const SC = Component.SC; const last = i === SC.length - 1 && st === SC[i].steps - 1;
+        const fork = SC[i].id === 'fork' && !this.state.choice;
+        cue.style.transition = 'none'; cue.style.opacity = '0';
+        clearTimeout(this._cueT);
+        if (!last && !fork) this._cueT = setTimeout(() => { cue.style.transition = 'opacity 1.2s ease'; cue.style.opacity = '1'; }, R ? 300 : (i === 0 && st === 0 ? 3200 : 2600));
+      }
+    };
+    if (R) run(); else requestAnimationFrame(() => requestAnimationFrame(run));
+  }
+
+  reveal(root, R) {
+    const st = this.state.st;
+    const rb = root.getBoundingClientRect();
+    let bottom = -Infinity;
+    root.querySelectorAll('[data-step]').forEach((el) => {
+      if (+el.dataset.step <= st && el.tagName !== 'INS') bottom = Math.max(bottom, el.getBoundingClientRect().bottom);
+    });
+    root.querySelectorAll('[data-reveal]').forEach((el) => { bottom = Math.max(bottom, el.getBoundingClientRect().bottom); });
+    if (bottom === -Infinity) return;
+    const over = bottom - (rb.top + root.clientHeight) + 40;
+    if (over > 0) root.scrollTo({ top: root.scrollTop + over, behavior: R ? 'auto' : 'smooth' });
+  }
+
+  renderVals() {
+    const SC = Component.SC;
+    const { i, st, choice, drawer, imgFailed, nudge } = this.state;
+    const s = SC[i];
+    const on = {}; SC.forEach((x, k) => { on[x.id] = k === i; });
+    const dark = s.dark || (s.darkAt0 && st === 0) || (s.darkFrom != null && st >= s.darkFrom);
+    const opt = (c) => ({ bd: choice === c ? '#0A0A0A' : '#E4E4E4', mark: choice === c ? '> ihre wahl' : '', pressed: choice === c ? 'true' : 'false' });
+    return {
+      on,
+      chapter: s.ch,
+      tag: (this.props.showTags ?? true) ? s.tag : '',
+      pct: (((i + (st + 1) / s.steps) / SC.length) * 100).toFixed(2) + '%',
+      chromeOp: s.img ? '0' : '1',
+      hintOp: i === 0 ? '1' : '0',
+      th: dark ? { fg: '#FFFFFF', bg: '#0A0A0A', line: '#1F1F1F' } : { fg: '#0A0A0A', bg: '#FFFFFF', line: '#E4E4E4' },
+      next: (e) => { if (e) e.stopPropagation(); this.next(); },
+      prev: (e) => { if (e) e.stopPropagation(); this.prev(); },
+      onStage: (e) => { if (e.target.closest && e.target.closest('a,button,[data-noadvance]')) return; if (e.clientX < window.innerWidth * 0.12 && (i > 0 || st > 0)) this.prev(); else this.next(); },
+      cueText: i === 0 ? 'klicken oder leertaste' : (s.id === 'fork' && choice ? 'weiter' : ''),
+      cueFg: dark ? '#FFFFFF' : '#0A0A0A',
+      pickA: (e) => { e.stopPropagation(); this.pick('a'); },
+      pickB: (e) => { e.stopPropagation(); this.pick('b'); },
+      chosen: !!choice,
+      nudge: nudge && s.id === 'fork',
+      fa: opt('a'),
+      fb: opt('b'),
+      imgOk: !imgFailed,
+      imgFailed,
+      onImgError: () => this.setState({ imgFailed: true }),
+      drawer,
+      openDrawer: (e) => { e.stopPropagation(); this.setState({ drawer: true }); },
+      closeDrawer: (e) => { e.stopPropagation(); this.setState({ drawer: false }); }
+    };
+  }
+}
+</script>
+</body>
+</html>
